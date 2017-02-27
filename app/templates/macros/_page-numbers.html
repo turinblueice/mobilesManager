@@ -1,0 +1,19 @@
+{% macro render_page_numbers(endpoint, page_nums, pagination, query=None) %}
+<div class="page-items">
+    {% if pagination.page > 1 %}
+        <div class="page-item page-item-side">
+            <a href="{{url_for(endpoint, query=query, page=pagination.page-1)}}">上一页</a>
+        </div>
+    {% endif %}
+    {% for page_num in page_nums %}
+        <div class="page-item {% if page_num == pagination.page %}current-page{% endif %}">
+            <a href="{{url_for(endpoint, query=query, page=page_num)}}">{{page_num}}</a>
+        </div>
+    {% endfor %}
+    {% if pagination.page < pagination.pages %}
+        <div class="page-item page-item-side">
+            <a href="{{url_for(endpoint, query=query, page=pagination.page+1)}}">下一页</a>
+        </div>
+    {% endif %}
+</div>
+{% endmacro %}

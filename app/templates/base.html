@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <script type="application/javascript" src="{{ url_for('index.static', filename='javascript/jquery-2.1.4.min.js') }}"></script>
+    {% block js_links %}{% endblock %}
+    <link  href="{{ url_for('index.static', filename='css/base.css')}}" rel="stylesheet" type="text/css"/>
+    {% block css_links %}{% endblock %}
+
+</head>
+<body>
+    <!-- 导航条 -->
+    <div id="nav-wrap">
+        <ul>
+            <li><a href="{{ url_for('index.index_page') }}">所有</a></li>
+            <li><a href="{{ url_for('index.index_page', query='android') }}">android</a></li>
+            <li><a href="{{ url_for('index.index_page', query='ios') }}">ios</a></li>
+            <li><a href="{{ url_for('index.index_page', query='available') }}">库中</a></li>
+        </ul>
+        <ul class="nav-right">
+            {% if user %}
+                <li><a>{{user}}</a></li>
+                <li><a href="{{ url_for('login.logout_action') }}">登出</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login.login_page') }}">登录</a></li>
+                <li><a href="{{ url_for('register.register_page') }}">注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="search-box">
+        <form action="/search/mobile/" method="post">
+            <fieldset>
+                <input id="inp-query" name="search_mobile_text"  maxlength="60" value="" placeholder="手机品牌">
+                <input id="inp-btn" type="submit" value="搜索">
+            </fieldset>
+        </form>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

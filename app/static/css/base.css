@@ -1,0 +1,92 @@
+/* base css*/
+
+html {
+    color:#111;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #f0f3f5;
+    font-size: 62.5%; /* font-size 1em = 10px */
+    font-style: normal;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+    min-height: 100%;
+}
+/*导航*/
+
+#nav-wrap{
+    background-color: #545652;
+    position: relative;
+}
+
+#nav-wrap ul{
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-wrap .nav-right{
+
+    position: absolute;
+    right: 0em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#nav-wrap ul li{
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+#nav-wrap ul li a{
+
+    display: block;
+    padding: 0 1.2em;
+    font-size: 1.2em;
+    color:#d5d5d5;
+    height: 2.4em;
+    line-height: 2.4em;
+    cursor: pointer;
+}
+#nav-wrap ul li a:hover{
+    color: whitesmoke;
+}
+
+/*搜索框*/
+.search-box{
+    text-align: center;
+}
+
+fieldset{
+    height: 34px;
+    border: none;
+    margin: 0.5em auto ;
+    padding: 0;
+    display: inline-block;
+}
+
+fieldset input{
+    height: 100%;
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+fieldset #inp-query{
+    /*border-radius: 0.3em;*/
+    width: 30em;
+    padding-left: 0.6em;
+}
+
+fieldset #inp-btn{
+    width: 37px;
+    color: transparent;
+    background-image: url("../image/utils/search_icon.png");
+}

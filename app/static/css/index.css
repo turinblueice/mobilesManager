@@ -1,0 +1,62 @@
+/*主页图片*/
+.mobile-wrap-row{
+    text-align: center;
+}
+
+.mobile-wrap{
+    display: inline-block;
+    width: 12em;
+    text-align: center;
+    padding: 2em  ;
+}
+
+.mobile-wrap img{
+    font-size: 1em;
+    width: 100%;
+    height: 16em;
+    cursor: pointer;
+    margin-bottom: 0.4em;
+}
+
+.mobile-link{
+    text-decoration: none;
+}
+
+.mobile-text {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0.2em;
+    color:#333;
+    word-break: break-all;
+    overflow: hidden;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+.mobile-text:visited{
+    color:#333;
+}
+
+.mobile-brand{
+
+
+}
+
+.mobile-status{
+    margin-top: 1em;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.2em;
+    width: 90%;
+    height: 1.8em;
+    line-height: 1.8em;
+    border-radius: 2px;
+}
+
+.available{
+    background-color: #268dcd;
+}
+
+.occupied{
+    background-color: lightgray;
+}

@@ -1,0 +1,81 @@
+/*图片信息*/
+
+.mobile-wrap{
+    margin: 3em auto;
+    width: 70em;
+    padding: 2em  ;
+}
+
+.mobile-wrap img{
+    display: inline-block;
+    font-size: 1em;
+    width: 25em;
+    height: 35em;
+    cursor: pointer;
+}
+
+.mobile-info-wrap{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mobile-info-wrap > div{
+
+    width: 30em;
+    font-size: 1.5em;
+    margin-top: 1em;
+    height: 1.5em;
+    line-height: 1.5em;
+    border-bottom: 0.08em solid #a59f9f;
+    padding-left: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+div.mobile-status {
+
+    border: 0;
+    border-radius: 0.2em;
+    /*background-color: #268dcd;*/
+    /*color: #fafafa;*/
+
+}
+
+.occupied{
+    background-color: lightgray;
+}
+
+.available{
+    background-color: #268dcd;
+    color: #D3E7E9;
+}
+
+.mobile-owner{
+    color: #fff375;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+div.mobile-borrow {
+
+    border: 0;
+    border-radius: 0.2em;
+    background-color: #268dcd;
+    color: #fafafa;
+
+}
+
+#borrow, #give-back{
+    width: 24.75em;
+    font-size: 2em;
+    margin-top: 1em;
+    height: 2em;
+    border: 0;
+    border-radius: 0.2em;
+    /*padding-top: 0.5em;*/
+    /*padding-bottom: 0.5em;*/
+    cursor: pointer;
+    background-color: #268dcd;
+    color: white;
+}
+

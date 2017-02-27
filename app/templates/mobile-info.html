@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}手机信息查看{% endblock %}
+{% block js_links %}
+    <script  type="application/javascript" src="{{ url_for('index.static', filename='javascript/mobile.js') }}" ></script>
+{% endblock %}
+{% block css_links %}
+    <link  href="{{ url_for('index.static', filename='css/mobile-info.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content%}
+    <div class="mobile-wrap">
+        <img src="{{ url_for('index.static', filename='image/mobiles/'+mobile.thumbnail_path) }}" alt="华为p8">
+        <div class="mobile-info-wrap">
+            <div class="mobile-os-version"><span class="os">系统: {{mobile.os}}</span><span class="version">{{mobile.version}}</span></div>
+            <div class="mobile-brand">品牌: {{mobile.brand}}</div>
+            <div class="mobile-model">型号: {{mobile.model}}</div>
+            {% if mobile.rom %}<div class="mobile-rom">内存: {{mobile.rom}}GB</div>{% endif %}
+            <div class="mobile-status {% if mobile.borrower_id%}occupied{% else %}available{% endif%}" >当前借用者：<span class="mobile-owner">{% if owner %}{{owner}}{%else%}闲置中{%endif%}</span></div>
+            {% if is_borrower%}
+                <button id="give-back">归还</button>
+            {% else %}
+                <button id="borrow" >借用</button>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

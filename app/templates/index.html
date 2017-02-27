@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}手机管理订阅系统{% endblock %}
+{% block css_links %}
+    <link href="{{ url_for('index.static', filename='css/index.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('index.static', filename='css/macros/_page-numbers.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content%}
+    {% for row in rows %}
+        <div class="mobile-wrap-row">
+         {% for mobile in row %}
+            <div class="mobile-wrap">
+                <a class="mobile-link" href="{{ url_for('mobile.mobile_info_page', mobile_id=mobile.id) }}" target="_blank" >
+                    <img src="{{url_for('index.static', filename='image/mobiles/'+mobile.thumbnail_path)}}" alt="华为p8">
+                    <div class="mobile-text mobile-brand">{{mobile.brand}}</div>
+                    <div class="mobile-text mobile-model">{{mobile.model}}</div>
+                    <div class="mobile-text mobile-status {% if mobile.borrow_id %}occupied{%else%}available{%endif%}">
+                        {% if mobile.borrower_id %}{{ get_borrower_name(mobile.borrower_id) }}{% else %}可借{%endif%}
+                    </div>
+                </a>
+            </div>
+            {%endfor%}
+        </div>
+    {% endfor %}
+    {% from 'macros/_page-numbers.html' import  render_page_numbers %}
+    {{ render_page_numbers('index.index_page', page_numbers, pagination) }}
+
+{% endblock %}

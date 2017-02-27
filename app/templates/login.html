@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link  href="{{url_for('index.static', filename='css/login.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div style="width: 100%;height: 1px;"></div>
+    <div class="form-wrap">
+        <div class="errors">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{category}}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        </div>
+        <form action="/login/action/" method="post">
+            <div class="form-edit-row">
+                 {{form.email.label}}
+                <!--<div class="label">用户名</div>-->
+                {{form.email(class='email')}}
+            </div>
+            <div class="form-edit-row">
+                {{form.password.label}}
+                <!--<div class="label">密码</div>-->
+                {{form.password(class='password')}}
+            </div>
+            <div class="form-check-row">
+                {{form.next_auto_login}}
+                {{ form.next_auto_login.label }}
+                <!--<div class="label">下次自动登陆</div>-->
+            </div>
+            {{ form.csrf_token }}
+            {{form.submit}}
+            <div class="register-tips">还没账号？点此<a href="{{ url_for('register.register_page') }}">注册</a></div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link  href="{{url_for('index.static', filename='css/register.css')}}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div style="width: 100%;height: 1px;"></div>
+    <div class="form-wrap">
+        <div class="errors">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <ul class=flashes>
+                {% for category, message in messages %}
+                  <li class="{{category}}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </div>
+
+        <form action="/register/action/" method="post">
+            <div class="form-row">
+                {{form.email.label}}
+                {{form.email(class='edit-text')}}
+            </div>
+            <div class="form-row">
+                {{form.password.label}}
+                {{form.password(class='edit-text')}}
+            </div>
+            <div class="form-row">
+                {{form.password_confirm.label}}
+                {{form.password_confirm(class='edit-text')}}
+            </div>
+            <div class="form-row">
+                {{form.nick_name.label}}
+                {{form.nick_name(class='edit-text')}}
+            </div>
+            {{ form.csrf_token }}
+            {{form.submit}}
+            <div class="login-tips">已有账号？点击<a href="{{ url_for('login.login_page') }}">登录</a></div>
+        </form>
+    </div>
+</body>
+</html>

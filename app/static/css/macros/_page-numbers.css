@@ -1,0 +1,49 @@
+/*页码样式*/
+
+.page-items {
+    margin: 0 auto;
+    margin-top: 1em;
+    text-align: right;
+    width: 80%;
+}
+
+.page-item {
+
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 0.1em #3B666B;
+    margin-left: 0.15em;
+    text-align: center;
+
+}
+
+.current-page {
+    border-color: #6d707d;
+}
+
+.page-item a{
+
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/*.page-item a:visited{*/
+    /*color: dimgray;*/
+/*}*/
+
+.page-item-side{
+    width: 5em;
+    padding: 0.23em;
+}
+
+.current-page a{
+    background-color: #6d707d;
+    color: white;
+}
