@@ -13,7 +13,7 @@ from app.extensions import db
 
 DEFAULT_APP_NAME = 'mobilesManagerSite'
 manager = Manager(app.create_app(DEFAULT_APP_NAME,  'development'))
-manager.add_command("runserver", Server('0.0.0.0', port=8000))
+manager.add_command("runserver", Server(host='0.0.0.0', port=8000))
 
 
 # def _mk_context():
