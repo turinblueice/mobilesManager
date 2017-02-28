@@ -1,7 +1,5 @@
 #   -*- coding:utf8  -*-
 
-import os
-import sys
 import app
 
 import flask_script
@@ -10,11 +8,15 @@ from flask_script import Server
 from flask_script import Shell
 from app.extensions import db
 
+from utils import log
+
 
 DEFAULT_APP_NAME = 'mobilesManagerSite'
-manager = Manager(app.create_app(DEFAULT_APP_NAME,  'development'))
-manager.add_command("runserver", Server(host='0.0.0.0', port=8000))
+curr_app = app.create_app(DEFAULT_APP_NAME,  'development')
+manager = Manager(curr_app)
 
+use_reloader = not(curr_app.config.get('DEBUG_WITH_PYCHARM'))
+manager.add_command("runserver", Server(host='0.0.0.0', port=8000, use_reloader=use_reloader))
 
 # def _mk_context():
 #     return dict(db=db)

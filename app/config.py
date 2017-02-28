@@ -25,9 +25,10 @@ class DevelopmentConfig(Config):
     """
         开发环境配置
     """
-    DEBUG = True
+    DEBUG = True  #app.debug
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(Config.BASE_DIR, 'db/mobileManagerDB.sqlite')
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+    DEBUG_WITH_PYCHARM = True  # use_reloader = False
 
 
 class ProductionConfig(Config):
