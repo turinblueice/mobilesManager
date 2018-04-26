@@ -3,7 +3,7 @@
 """
 模块用法说明: 配置模块
 
-Authors: Hong Quan(huojian@in66.com)
+Authors: Hong Quan
 Date:
 """
 
